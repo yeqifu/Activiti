@@ -8,6 +8,11 @@ import org.activiti.engine.task.Task;
 import java.util.List;
 
 /**
+ * 删除已经部署的流程定义
+ * 背后影响的表：
+ *      act_ge_bytearray
+ *      act_re_deployment
+ *      act_re_procdef
  * @Author: 落亦-
  * @Date: 2020/4/9 19:42
  */
@@ -19,7 +24,7 @@ public class ActivitiTaskQuery {
         //2.获得taskService对象
         TaskService taskService = processEngine.getTaskService();
         //3.根据流程定义的key，负责人assignee来实现对当前用户的任务列表查询
-        List<Task> taskList = taskService.createTaskQuery().processDefinitionKey("myProcess_1").taskAssignee("张三").list();
+        List<Task> taskList = taskService.createTaskQuery().processDefinitionKey("holiday").taskAssignee("张三").list();
         //4.任务列表的展示
         for (Task task : taskList) {
             System.out.println("流程实例ID："+task.getProcessInstanceId());

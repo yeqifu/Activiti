@@ -26,7 +26,7 @@ public class ActivitiStartNewInstance {
         //2.获取runtimeService
         RuntimeService runtimeService = processEngine.getRuntimeService();
         //3.运行实例
-        ProcessInstance myHoliday = runtimeService.startProcessInstanceByKey("myProcess_1");
+        ProcessInstance myHoliday = runtimeService.startProcessInstanceByKey("holiday");
 
         System.out.println("流程部署的ID："+myHoliday.getDeploymentId());
         System.out.println("流程实例的ID："+myHoliday.getId());

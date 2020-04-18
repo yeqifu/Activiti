@@ -20,8 +20,8 @@ public class QueryBpmnFile {
         ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
         RepositoryService repositoryService = processEngine.getRepositoryService();
         ProcessDefinitionQuery processDefinitionQuery = repositoryService.createProcessDefinitionQuery();
-        //4.设置查询条件
-        processDefinitionQuery.processDefinitionKey("holiday");//参数是流程定义的key
+        //4.设置查询条件   参数是流程定义的key
+        processDefinitionQuery.processDefinitionKey("holiday");
 
         //5.执行查询操作,查询出想要的流程定义
         ProcessDefinition processDefinition = processDefinitionQuery.singleResult();
